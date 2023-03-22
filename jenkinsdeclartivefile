@@ -1,0 +1,21 @@
+2. Pipeline stage
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh '/var/lib/jenkins/workspace/demoproject/build.sh’
+            }
+        }
+        stage('Test') {
+            steps {
+                sh ''/var/lib/jenkins/workspace/demoproject/test.sh'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh ''/var/lib/jenkins/workspace/demoproject/build.sh'
+            }
+        }
+    }
+}
